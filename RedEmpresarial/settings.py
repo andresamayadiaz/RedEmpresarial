@@ -88,6 +88,7 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
+	#'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -95,6 +96,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 )
 
 ROOT_URLCONF = 'RedEmpresarial.urls'
@@ -106,7 +108,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/Users/andresamayadiaz/Documents/RedEmpresarial/templates',
+    "/Users/andres.amaya.diaz/Documents/RedEmpresarial/RedEmpresarial/templates",
 )
 
 INSTALLED_APPS = (
