@@ -9,11 +9,11 @@ class EncuestaAdmin(admin.ModelAdmin):
 	readonly_fields = ('created', 'modified')
 	fieldsets = [
         ('Datos Generales',               {'fields': ['nombre', 'apepaterno', 'apematerno', 'nombrenegocio', 'Puesto']}),
-        ('Cuestionario Inicial', {'fields': []}),
-        ('Cuestionario General', {'fields': []}),
-        ('Cuestionario Servicios Gratuitos', {'fields': []}),
-        ('Cuestionario Servicios Costo Recuperacion', {'fields': []}),
-        ('Observaciones', {'fields': []}),
+        ('Cuestionario Inicial', {'fields': ['tipoempresa', 'tipoempresaotro', 'estabes', 'actividad', 'actividadotro']}),
+        ('Cuestionario General', {'fields': ['camara', 'camarasi', 'camararecibido']}),
+        ('Cuestionario Servicios Gratuitos', {'fields': ['creditos', 'enlaces', 'becasestudio', 'basesdatos', 'juridico', 'ventanillaunica', 'censo', 'belleza', 'modas', 'appmoviles', 'salajuntas', 'cursoingles', 'revista', 'econoescala', 'desproveedores', 'distintivos']}),
+        ('Cuestionario Servicios Costo Recuperacion', {'fields': ['felectronica', 'exportacion', 'contabilidad', 'estudiosmercado', 'incubadora', 'dispagweb', 'hosting']}),
+        ('Observaciones', {'fields': ['observaciones']}),
     ]
 
 admin.site.register(Puesto)
