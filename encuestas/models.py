@@ -9,6 +9,7 @@ class Puesto(models.Model):
         return self.nombre
 
 class Encuesta(models.Model):
+	#id = models.AutoField(primary_key=True)
     Puesto = models.ForeignKey(Puesto)
     nombre = models.CharField(max_length=250)
     apepaterno = models.CharField(max_length=250)
@@ -22,5 +23,6 @@ class Encuesta(models.Model):
     colonia = models.CharField(max_length=250)
     email = models.CharField(max_length=250)
     pweb = models.CharField(max_length=250)
+    creado = models.DateTimeField('fecha de creacion')
     def __unicode__(self):
-        return self.id + " " + self.nombrenegocio
+        return self.nombrenegocio
