@@ -1,0 +1,228 @@
+
+
+.navbar-inner {
+  min-height: 40px;
+  font-size: 12px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: #2c2c2c;
+  background-image: -moz-linear-gradient(top, #0088cc, #0045cc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0045cc));
+  background-image: -webkit-linear-gradient(top, #0088cc, #0045cc);
+  background-image: -o-linear-gradient(top, #0088cc, #0045cc);
+  background-image: linear-gradient(to bottom, #0088cc, #0045cc);
+  background-repeat: repeat-x;
+  border: 1px solid #d4d4d4;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#0088cc', endColorstr='#0045cc', GradientType=0);
+  *zoom: 1;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+            text-shadow: 0 0px 0 #ffffff;
+}
+
+
+
+
+
+
+.navbar .brand {
+  display: block;
+  float: left;
+  padding: 10px 20px 10px;
+  margin-left: -20px;
+  font-size: 20px;
+  font-weight: 200;
+  color: #ffffff;
+  text-shadow: 0 0px 0 #ffffff;
+}
+
+
+.navbar .nav > li > a {
+  float: none;
+  padding: 10px 15px 10px;
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 0 0px 0 #ffffff;
+}
+.navbar .navbar-link {
+  color: #ffffff;
+}
+
+.navbar .navbar-link:hover {
+  color: #999999;
+}
+
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+  color: #c4c4c4;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+
+
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #222222;
+  -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+     -moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+          box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+}
+
+
+
+
+.navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.active > .dropdown-toggle,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+  color: #ffffff;
+  background-color: #0081c2;
+}
+
+
+
+.navbar .nav li.dropdown .dropdown-toggle .caret,
+.navbar .nav li.dropdown.open .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+
+
+.navbar .btn-navbar {
+  
+  float: right;
+  padding: 7px 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+  background-color: #2c2c2c;
+  *background-color: #222222;
+  background-image: -ms-linear-gradient(top, #333333, #222222);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333333), to(#222222));
+  background-image: -webkit-linear-gradient(top, #333333, #222222);
+  background-image: -o-linear-gradient(top, #333333, #222222);
+  background-image: linear-gradient(top, #333333, #222222);
+  background-image: -moz-linear-gradient(top, #333333, #222222);
+  background-repeat: repeat-x;
+  border-color: #222222 #222222 #000000;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075);
+     -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075);
+}
+
+
+
+
+
+.navbar .btn-navbar:hover,
+.navbar .btn-navbar:active,
+.navbar .btn-navbar.active,
+.navbar .btn-navbar.disabled,
+.navbar .btn-navbar[disabled] {
+  background-color: #222222;
+  *background-color: #151515;
+}
+
+
+
+.nav-list > li > a:hover {
+ text-decoration: none;
+  /* background-color: #eeeeee;*/
+ /* Se agregaron las tres lineas de abajo */
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #0088cc;
+}
+
+
+
+.delete > li > a:hover {
+ text-decoration: none;
+  /* background-color: #eeeeee;*/
+ /* Se agregaron las tres lineas de abajo */
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #FA5858;
+}
+
+
+.add > li > a:hover {
+ text-decoration: none;
+  /* background-color: #eeeeee;*/
+ /* Se agregaron las tres lineas de abajo */
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #569C72;
+}
+
+
+
+.table thead {
+    background: none repeat scroll 0 0 #ECECEC;
+}
+
+
+
+
+.well_view {
+    background-color: #ffffff;
+    border: 1px solid #E3E3E3;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    margin-bottom: 20px;
+    min-height: 20px;
+    padding: 19px;
+}
+
+/*
+.error-message {
+  margin-bottom: 20px;
+  color: #c09853;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+
+
+
+.error-message {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+*/
+
+
+
+/* esto para los mensajes del jquery validate  */
+label.valid {
+    width: 24px;
+    height: 24px;
+    background: url(../img/valid.png) center center no-repeat;
+    display: inline-block;
+    text-indent: -9999px;
+     /*font-size: 13px;*/
+}
+
+label.error {
+    /*font-weight: bold;*/
+    color: red;
+    padding: 2px 8px;
+    margin-top: 2px;
+     /*font-size: 13px;*/
+}
+
+
