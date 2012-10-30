@@ -36,9 +36,32 @@ if(isset($this->request->params['named']['folio']))
               <td>
 	              <?php //echo $this->Html->link(__('Ver'), array('action' => 'view', $encuesta['Encuesta']['id']),array('class'=>'','escape' => false)); ?> &nbsp;
 	              <?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $encuesta['Encuesta']['id']),array('class'=>'','escape' => false)); ?> &nbsp;
-				<?php echo $this->Html->link(__('Imprimir'), array('action' => 'print', $encuesta['Encuesta']['id']),array('class'=>'','escape' => false)); ?>
+				<?php echo $this->Html->link(__('Imprimir'), array('action' => 'imprimir', $encuesta['Encuesta']['id']),array('class'=>'','escape' => false)); ?>
               </td>
             </tr>
             <?php endforeach; ?>
           </tbody>
       </table>
+      
+      <span class="">
+		<?php
+		echo $this->Paginator->counter(array(
+		'format' => __('Pagina {:page} de {:pages}, mostrando {:current} registros de un total de {:count}, iniciando en {:start}, terminando en {:end}')
+		));
+		?>		
+		</span>
+		
+				
+		
+		
+		
+		
+	<!--Paginacion bootstrap *********************************************************************************-->
+		<div class="pagination">
+			<ul>
+				<?php  echo $this->Paginator->prev('&larr; ' . __('Anterior'), array('escape'=>false,'tag' => 'li'), '<a onclick="return false;">&larr; ' . __('Anterior').'</a>', array('class'=>'disabled prev','escape'=>false,'tag' => 'li')); ?>
+				<?php  echo $this->Paginator->numbers(array('separator' => false,'tag' => 'li','currentClass'=> 'active')); ?>
+				<?php  echo $this->Paginator->next(__('Siguiente') . ' &rarr;', array('escape'=>false,'tag' => 'li'), '<a onclick="return false;">'.__('Siguiente') . ' &rarr;</a>', array('class'=>'disabled next','escape'=>false,'tag' => 'li')); ?>
+			</ul>
+		</div>
+	<!--Paginacion bootstrap *********************************************************************************-->

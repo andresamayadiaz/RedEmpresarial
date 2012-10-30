@@ -8,6 +8,86 @@ App::uses('AppController', 'Controller');
 class EncuestasController extends AppController {
 
 
+	public function imprimir($id = null){
+		$this->Encuesta->recursive = 0;
+		$this->Encuesta->id = $id;
+		if (!$this->Encuesta->exists()) {
+			throw new NotFoundException(__('Invalid encuesta'));
+		}
+		//$this->layout = 'pdf';
+		$encuesta = $this->Encuesta->find('first', array(
+			'conditions' => array('Encuesta.id'=>$id),
+			'recursive' => -1
+		));
+		//$this->set('encuesta', $this->Encuesta->read(null, $id));
+		
+		App::import('Vendor', 'ReciboPdf');
+		//App::import('Vendor', 'tcpdf/tcpdf');
+		$pdf = new ReciboPdf(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+		$background_color = array(255, 255, 255);
+		$pdf -> background_color = $background_color;
+		
+		$pdf -> SetCreator(PDF_CREATOR);
+		$pdf -> SetAuthor('Red Empresarial');
+		$pdf -> SetTitle('Recibo Red Empresarial');
+		$pdf -> SetSubject('Recibo Red Empresarial');
+		$pdf -> SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+		$pdf -> setImageScale(PDF_IMAGE_SCALE_RATIO);
+		
+		$pdf -> AddPage();
+		
+		$pdf->setJPEGQuality(75);
+		$pdf->Image('/var/www/redempresarial/app/webroot/img/recibo.png', 0, 0, 210, 297, '', '', '', false, 300, '', false, false, 0);
+		
+		$x = 5;
+		$y = 40;
+		$renglon = 16;
+		
+		// Lugar y Fecha
+		$pdf -> Text($x, $y, $encuesta['Encuesta']['created']);
+		$y += $renglon;
+		// Nombre o Razon Social
+		$pdf -> Text($x, $y, $encuesta['Encuesta']['nombrenegocio']);
+		$y += $renglon;
+		// Nombre del Censado
+		$pdf -> Text($x, $y, $encuesta['Encuesta']['nombre'].' '.$encuesta['Encuesta']['apepaterno'].' '.$encuesta['Encuesta']['apematerno']);
+		$y += $renglon;
+		// RFC Empresa
+		$pdf -> Text($x, $y, "");
+		$y += $renglon;
+		// Curp
+		$pdf -> Text($x, $y, "");
+		// EMail
+		$pdf -> Text($x+98, $y, $encuesta['Encuesta']['email']);
+		$y += $renglon;
+		// Telefono
+		$pdf -> Text($x, $y, $encuesta['Encuesta']['telefono']);
+		// Fax
+		$pdf -> Text($x+98, $y, "");
+		$y += $renglon;
+		// Organismo Intermedio
+		$pdf -> Text($x, $y, "");
+		$y += $renglon;
+		// Folio del proyecto
+		$pdf -> Text($x, $y, "");
+		$y += $renglon;
+		// Nombre del Proyecto
+		$pdf -> Text($x, $y, "");
+		$y += $renglon;
+		// Catego
+		$pdf -> Text($x, $y, "");
+		$y += $renglon;
+		// Concepto de Apoyo
+		$pdf -> Text($x, $y, "");
+		
+		$pdf -> Output('Recibo_'.$encuesta['Encuesta']['folio'].'.pdf', 'D');
+		
+		$this -> autoRender = false;
+		$this -> response -> type('pdf');
+		
+		
+	}
+
 	public function indexsearch(){
 	 
 		 if($this->request->is('post')){
