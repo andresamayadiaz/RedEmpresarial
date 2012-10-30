@@ -15,6 +15,8 @@
               
               <li><a href="<?php echo $this->Html->base;  ?>/encuestas/"><?php echo __('Encuestas'); ?></a></li>
               
+              <li><a href="<?php echo $this->Html->base;  ?>/encuestas/add"><?php echo __('Nueva Encuesta'); ?></a></li>
+              
               <li class="dropdown" id="configs">
               	<a class="dropdown-toggle" data-toggle="dropdown" href="#configs"><?php echo __('Configuraciones'); ?><b class="caret"></b></a>
                   <ul class="dropdown-menu">

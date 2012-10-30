@@ -7,14 +7,33 @@ App::uses('AppController', 'Controller');
  */
 class EncuestasController extends AppController {
 
+
+	public function indexsearch(){
+	 
+		 if($this->request->is('post')){
+			 $this->redirect(array('controller' => 'encuestas', 'action' => 'index', 'folio' => $this->request->data['Encuesta']['id']));
+		 }
+		 
+	 }
+
 /**
  * index method
  *
  * @return void
  */
 	public function index() {
-		$this->Encuesta->recursive = 0;
-		$this->set('encuestas', $this->paginate());
+		
+		$conditions = array();
+		
+		if(isset($this->request->params['named']['folio'])){
+					if(!empty($this->request->params['named']['folio'])){
+						$conditions['Encuesta.folio'] = $this->request->params['named']['folio'];
+					}
+				
+				}
+				
+		$this->Encuesta->recursive = -1;
+		$this->set('encuestas', $this->paginate('Encuesta', $conditions));
 	}
 
 /**
@@ -39,15 +58,20 @@ class EncuestasController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
-			/*
-			$this->Encuesta->create();
-			if ($this->Encuesta->save($this->request->data)) {
-				$this->Session->setFlash(__('La Encuesta se ha guardado con exito'),'flash_success');
-				$this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('Imposible guardar la encuesta.'),'flash_error');
+			if($this->request->data['Encuesta']['folio']!=$this->request->data['Encuesta']['refolio']){
+				$this->Session->setFlash(__('Los Folios no Coinciden.'),'flash_error');
+			}else {
+			
+				$this->Encuesta->create();
+				if ($this->Encuesta->save($this->request->data)) {
+					$this->Session->setFlash(__('La Encuesta se ha guardado con exito'),'flash_success');
+					$this->redirect(array('action' => 'index'));
+				} else {
+					$this->Session->setFlash(__('Imposible guardar la encuesta.'),'flash_error');
+					print_r($this->Encuesta->validationErrors);
+				}
+			
 			}
-			*/
 			print_r($this->request->data);
 		}
 		$puestos = $this->Encuesta->Puesto->find('list');
@@ -68,10 +92,10 @@ class EncuestasController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Encuesta->save($this->request->data)) {
-				$this->Session->setFlash(__('The encuesta has been saved'));
+				$this->Session->setFlash(__('La Encuesta se ha Editado con exito'), 'flash_success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The encuesta could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('Imposible guardar la encuesta, intente de nuevo'), 'flash_error');
 			}
 		} else {
 			$this->request->data = $this->Encuesta->read(null, $id);

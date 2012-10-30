@@ -5,12 +5,7 @@
 	        <div class="span3">
 		         <label>Folio</label>
 		         <!-- <input name="data[Encuesta][folio]" type="text" placeholder="Folio"> -->
-		         <?php echo $this->Form->input('folio',array('type'=>'text','label'=>false,'class'=>'', 'div' => false, 'placeholder'=>'Folio'));?>
-	        </div>
-	        <div class="span3">
-		         <label>Repetir Folio</label>
-		         <!-- <input name="data[Encuesta][refolio]" type="text" placeholder="Folio"> -->
-		         <?php echo $this->Form->input('refolio',array('type'=>'text','label'=>false,'class'=>'', 'div' => false, 'placeholder'=>'Folio'));?>
+		         <?php echo $this->Form->input('folio',array('readonly'=>'readonly', 'type'=>'text','label'=>false,'class'=>'', 'div' => false, 'placeholder'=>'Folio'));?>
 	        </div>
         </div><!--/row-->
     	
@@ -141,7 +136,7 @@
 	        <div class="span6">
 		         <label>3.- ¿Cuál de las siguientes opciones describe mejor la actividad de este establecimiento?</label>
 		         <label class="radio">
-		         <?php echo $this->Form->radio('actividad',array('1' => '1) Comercio de Mercancías', '2) Manufactura' => '2) Manufactura', '3) Preparación de Alimentos' => '3) Preparación de Alimentos', '4) Servicios' => '4) Servicios', '5)Transporte de Personas y/o Bienes'=>'5)Transporte de Personas y/o Bienes', '6) Construcción'=>'6) Construcción', '7) Crédito o Ahorro'=>'7) Crédito o Ahorro', '8) Otras Actividades, especifique'=>'8) Otras Actividades, especifique'), array('legend' => false, 'div' => false));?>
+		         <?php echo $this->Form->radio('actividad',array('1' => '1) Comercio de Mercancías', '2' => '2) Manufactura', '3' => '3) Preparación de Alimentos', '4' => '4) Servicios', '5'=>'5)Transporte de Personas y/o Bienes', '6'=>'6) Construcción', '7'=>'7) Crédito o Ahorro', '8'=>'8) Otras Actividades, especifique'), array('legend' => false, 'div' => false));?>
 				</label>
 				<input name="data[Encuesta][actividadotro]" type="text" placeholder="Especifique">
 	        </div>

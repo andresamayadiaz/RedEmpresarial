@@ -10,8 +10,9 @@
           
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="<?php echo $this->Html->base;  ?>/users/home"><?php echo __('Home'); ?></a></li>
               <li><a href="<?php echo $this->Html->base;  ?>/encuestas/"><?php echo __('Encuestas'); ?></a></li>
+              
+              <li><a href="<?php echo $this->Html->base;  ?>/encuestas/add"><?php echo __('Nueva Encuesta'); ?></a></li>
               
             </ul>
             
